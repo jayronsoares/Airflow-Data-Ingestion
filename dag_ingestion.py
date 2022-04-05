@@ -45,7 +45,7 @@ with DAG(
 
     t1 = BashOperator(
         task_id='data_ingestion',
-        bash_command='python3 /mnt/c/Data_Engineering/datapipeline/airflow/dags/calix_ingestion.py',
+        bash_command='python3 /mnt/c/data_engineering/datapipeline/airflow/dags/ingestion_step.py',
     )
 
     t2 = BashOperator(
@@ -53,10 +53,4 @@ with DAG(
         bash_command='',  
     )
 
-    t3 = BashOperator(
-        task_id='data_dumpfile',
-        bash_command='',
-        
-    )
-
-start >> t1 >> t2 >> t3 >> end
+start >> t1 >> t2 >> end
