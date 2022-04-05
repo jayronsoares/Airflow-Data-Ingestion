@@ -3,33 +3,31 @@ Simple Load of a CSV/XLS file into Postgres using Airflow orchestration
 
 
 # Building a virtual environment:
-mkdir datapipeline
-cd datapipeline
-python3 -m venv .env
-source .env/bin/activate
+- mkdir datapipeline
+- cd datapipeline
+- python3 -m venv .env
+- source .env/bin/activate
 
 Create a environment variable indicating airflow directory installation:
-linux> export AIRFLOW_HOME=$(pwd)/airflow
+- linux> export AIRFLOW_HOME=$(pwd)/airflow
 
 # -- INSTALL AIRFLOW
-pip install "apache-airflow[celery]==2.2.4" --constraint
-"https://raw.githubusercontent.com/apache/airflow/constraints-2.2.5/${PYTHON_VERSION}.txt"
-
+- pip install "apache-airflow[celery]==2.2.4" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.5/${PYTHON_VERSION}.txt"
 
 # Initiate airflow metadata database:
-airflow db init
+- airflow db init
 
 # Start Webserver services:
-airflow webserver
+- airflow webserver
 
 # Start Scheduler services:
-airflow scheduler
+- airflow scheduler
 
 # Start airflow locally
-airflow standalone
+- airflow standalone
 
 # create a user
-airflow users create --username <username> --firstname <first> --lastname <last> --role Admin --email email@.co.com
+- airflow users create --username <username> --firstname <first> --lastname <last> --role Admin --email email@.co.com
 
 ########################################################################################################
 
@@ -48,7 +46,7 @@ HOW TO FIX THE ERROR ABOVE
 # If you need to install extra dependencies of airflow, you can use the script below to make an installation a one-liner (the example below installs postgres and google provider, as well as async extra.
 ##########################################################################################################
 
-AIRFLOW_VERSION=2.2.5
-PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
-CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
-pip install "apache-airflow[async,postgres]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+- AIRFLOW_VERSION=2.2.5
+- PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
+- CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+- pip install "apache-airflow[async,postgres]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
