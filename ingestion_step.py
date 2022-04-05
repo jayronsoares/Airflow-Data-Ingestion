@@ -31,7 +31,7 @@ import sys
 sys.path.insert(0,os.path.abspath(os.path.dirname(__file__)))
 
 warnings.filterwarnings("ignore")
-s3 = s3fs.S3FileSystem(anon=False, key='AKIAXSTJGBKSOBDBYVGZ', secret='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')
+s3 = s3fs.S3FileSystem(anon=False, key='keycode', secret='key_secret')
 
 ###########################################
 # ## S3 Bucket Setup & Parameters ##
@@ -47,7 +47,7 @@ filename='filename.xlsx'
 
 PSQL_DB = os.getenv("PSQL_DB", "stagging_db")
 PSQL_USER = os.getenv("PSQL_USER", "master")
-PSQL_PASSWORD = os.getenv("PSQL_PASSWORD", "passord")
+PSQL_PASSWORD = os.getenv("PSQL_PASSWORD", "password")
 PSQL_PORT = os.getenv("PSQL_PORT", "5432")
 PSQL_HOST = os.getenv("PSQL_HOST", "code.us-east-1.rds.amazonaws.com")
 
