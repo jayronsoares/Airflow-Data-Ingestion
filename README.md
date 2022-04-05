@@ -8,17 +8,15 @@ cd datapipeline
 python3 -m venv .env
 source .env/bin/activate
 
-Criaremos uma variável de ambiente que aponta para a pasta onde o
-Airflow será instalado
-
-export AIRFLOW_HOME=$(pwd)/airflow
+Create a environment variable indicating airflow directory installation:
+linux> export AIRFLOW_HOME=$(pwd)/airflow
 
 # -- INSTALL AIRFLOW
 pip install "apache-airflow[celery]==2.2.4" --constraint
 "https://raw.githubusercontent.com/apache/airflow/constraints-2.2.5/${PYTHON_VERSION}.txt"
 
 
-# Initiate the metadata database of airflow:
+# Initiate airflow metadata database:
 airflow db init
 
 # Start Webserver services:
@@ -27,15 +25,11 @@ airflow webserver
 # Start Scheduler services:
 airflow scheduler
 
-#####################################
-# Start locally airflow
+# Start airflow locally
 airflow standalone
-#####################################
 
 # create a user
-
-airflow users create --username <username> --firstname <first>
---lastname <last> --role Admin --email email@.co.com
+airflow users create --username <username> --firstname <first> --lastname <last> --role Admin --email email@.co.com
 
 ########################################################################################################
 
