@@ -1,5 +1,5 @@
 # Airflow-Data-Ingestion
-Simple Load of a CSV/XLX file into Postgres using Airflow orchestration
+Simple Load of a CSV/XLS file into Postgres using Airflow orchestration
 
 
 # Building a virtual environment:
