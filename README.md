@@ -38,10 +38,10 @@ SqlAchemy error: When running a airflow dag, there is a probability of the follo
 [2022-04-01, 14:58:35 -03] {subprocess.py:89} INFO - Trying to import the above resulted in these errors:
 [2022-04-01, 14:58:35 -03] {subprocess.py:89} INFO -  - Pandas requires version '1.4.0' or newer of 'sqlalchemy' (version '1.3.24' currently installed).
 
-HOW TO FIX THE ERROR ABOVE
+## HOW TO FIX THE ERROR ABOVE
 
-## Installing Airflow with extras and providers
-## If you need to install extra dependencies of airflow, you can use the script below to make an installation a one-liner (the example below installs postgres and google provider, as well as async extra.
+### Installing Airflow with extras and providers
+### If you need to install extra dependencies of airflow, you can use the script below to make an installation a one-liner (the example below installs postgres and google provider, as well as async extra.
 
 - AIRFLOW_VERSION=2.2.5
 - PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
