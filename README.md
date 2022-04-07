@@ -40,11 +40,8 @@ SqlAchemy error: When running a airflow dag, there is a probability of the follo
 
 HOW TO FIX THE ERROR ABOVE
 
-##########################################################################################################
-
-# Installing Airflow with extras and providers
-# If you need to install extra dependencies of airflow, you can use the script below to make an installation a one-liner (the example below installs postgres and google provider, as well as async extra.
-##########################################################################################################
+## Installing Airflow with extras and providers
+## If you need to install extra dependencies of airflow, you can use the script below to make an installation a one-liner (the example below installs postgres and google provider, as well as async extra.
 
 - AIRFLOW_VERSION=2.2.5
 - PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
